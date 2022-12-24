@@ -1,3 +1,0 @@
-/home/adri/projects/manuel/foto_cuadros/c_detect_square/CMakeFiles/paint_cutter.dir
-/home/adri/projects/manuel/foto_cuadros/c_detect_square/CMakeFiles/edit_cache.dir
-/home/adri/projects/manuel/foto_cuadros/c_detect_square/CMakeFiles/rebuild_cache.dir
