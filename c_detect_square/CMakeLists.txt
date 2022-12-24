@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 2.8)
+project( Painting_cutter )
+find_package( OpenCV REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+set(SOURCES main.cpp src/cut_image.cpp)
+add_executable( paint_cutter ${SOURCES} )
+target_link_libraries( paint_cutter ${OpenCV_LIBS} )
