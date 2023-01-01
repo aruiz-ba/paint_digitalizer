@@ -32,7 +32,7 @@ int create_mask_from_green_screen(Mat image)
 	//Maybe you should adjust this threshold to work just with green
 	//to make it more percise
 	threshold(image, mask, 150, 255, THRESH_BINARY);
-	return(save_image(mask, "./tmp/", "tmp_mask.jpg"));
+	return(save_image(mask, "./cut_image/tmp/", "tmp_mask.jpg"));
 }
 
 int main(int argc, char **argv)
@@ -55,11 +55,11 @@ int main(int argc, char **argv)
 		return 0;
 	}
 
-	mask = imread("tmp/tmp_mask.jpg");
+	mask = imread("./cut_image/tmp/tmp_mask.jpg");
 	original = imread(argv[1]);
 	cutted_image = cut_image(mask, original);
 
-	save_image(cutted_image, "./results/", "test.jpg");
+	save_image(cutted_image, "./", "latest.jpg");
 
 	return 0;
 }

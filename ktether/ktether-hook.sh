@@ -20,6 +20,8 @@ case "$ACTION" in
 		echo "last_file_number=$this_file_number" >> $PWD/session.conf
                 ;; 
         esac 
+
+		./cut_image/paint_cutter ./latest.jpg
 		rm -rf *JPG
         exit 0 
 

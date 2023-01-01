@@ -1,4 +1,4 @@
-# Install script for directory: /home/adri/projects/manuel/foto_cuadros/c_detect_square
+# Install script for directory: /home/adri/projects/manuel/foto_cuadros/paint_digitalizer/cut_image
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/adri/projects/manuel/foto_cuadros/c_detect_square/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/adri/projects/manuel/foto_cuadros/paint_digitalizer/cut_image/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -1,14 +1,14 @@
 #!/bin/sh
 
-#if !(pidof -x ktether > /dev/null); then
-#	./ktether/ktether &
-#fi
+if !(pidof -x ktether > /dev/null); then
+	./ktether/ktether &
+fi
 
 COORD=$(python ./gui/menu_coord.py)
-sxiv ./gui/latest.jpg &
+sxiv ./latest.jpg &
 python ./gui/save_photo.py $COORD
 pkill sxiv
-#./paint_digitalizer.sh
+./paint_digitalizer.sh
 
 pkill ktether
 
