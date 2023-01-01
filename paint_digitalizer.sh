@@ -1,9 +1,27 @@
 #!/bin/sh
 
-./ktether/ktether &
+#if !(pidof -x ktether > /dev/null); then
+#	./ktether/ktether &
+#fi
+
+COORD=$(python ./gui/menu_coord.py)
 sxiv ./gui/latest.jpg &
-python ./gui/gui.py
-pkill gphoto2
+python ./gui/save_photo.py $COORD
+pkill sxiv
+#./paint_digitalizer.sh
+
+pkill ktether
+
+
+#This to exit the application
+#if [ $(python ./gui/save_photo.py $COORD) -eq "Menu" ]
+#then
+#	pkill sxiv
+#	./paint_digitalizer.sh
+#fi
+#pkill sxiv
+#pkill ktether
+
 
 #Proteger boton de guardar para que solo guarde si no es el tick verde
 
