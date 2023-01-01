@@ -1,0 +1,26 @@
+Hey!  This isn't so much a standalone "here you go tethering" app as much as it is a couple of scripts to go along side the video at:
+
+There's a video on youtube with the basics, although the actual scripts from that version are in the YOUTUBE-VERSION-OLD folder here.  The newer version is better.
+https://youtu.be/w5_-DzKP9Z4
+
+Either script you use:
+
+1) Put ktether and ktether-hook.sh somewhere, preferably in your path so you can run it from anywhere.
+2) edit the top of the file to point at a placeholder_image on your system to be used as the initially viewed image when you run the script
+
+If you use the most recent version you need to also install:
+
+- geeqie (used as the preview image program as it works great with the NEF)
+- speaker-test (used to "beep" if the camera gets disconnected
+
+To use, 
+- go to the directory where you want the camera files to end up
+- type ktether (or /path/to/ktether if you haven't put it somewhere in your path)
+
+Options,
+If you start e.g. 
+ktether fashion-shoot
+then camera files will be renamed fashion-shoot-0001.NEF, fashion-shoot-0002.NEF etc
+
+
+

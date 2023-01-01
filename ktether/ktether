@@ -1,0 +1,33 @@
+#!/bin/bash
+#
+# To make things work,  you need to have an image somewhere on your 
+# local machine that is used as the FIRST image displayed with ktether
+# is launched.  Personally I use a NEF file of my logo.. so when I 
+# start ktether in a fresh directory it is displayed before the first 
+# shot is taken. I'm Nikon so I use NEF
+placeholder_image=./test.jpg
+#
+#
+#Store first argument in a local file to be used as a file prefix. Blank is ok.
+# if there isn't a config file create one
+
+if [ ! -f "session.conf" ]; then
+	if [ -z "$1" ];then
+		echo "file_prefix=pic" > session.conf
+	else
+		echo "file_prefix=$1" > session.conf
+	fi
+	echo "last_file_number=0" >> session.conf
+fi
+# Do some setup if can't find evidence of old tether
+if [ ! -f "latest.jpg" ]; then
+	cp $placeholder_image latest.jpg
+fi
+# Open latest.NEF in geeqie (unless it's already running)
+if ! pgrep -x "geeqie" > /dev/null
+then
+    geeqie latest.jpg & 
+fi
+# Launch gphoto to capture files from camera invoking hook script
+gphoto2 --capture-tethered --hook-script=$BASH_SOURCE-hook.sh 
+( speaker-test -t sine -f 1000 )& pid=$! ; sleep 0.5s ; kill -9 $pid
