@@ -4,10 +4,14 @@ if !(pidof -x ktether > /dev/null); then
 	./ktether/ktether &
 fi
 
+#hacer un creador de carpetas
+
 COORD=$(python ./gui/menu_coord.py)
-sxiv ./latest.jpg &
-python ./gui/save_photo.py $COORD
+#sxiv ./latest.jpg &
+python ./gui/save_photo.py $COORD 
+
 pkill sxiv
+
 ./paint_digitalizer.sh
 
 pkill ktether
@@ -30,3 +34,5 @@ pkill ktether
 
 #Aniadir los botones tag para las imagenes que aniada metadatos, el boton de
 #guardar no debe funcionar sin tener esto seleccionado
+#
+#Aniadir para poner medidas
