@@ -36,3 +36,6 @@ pkill ktether
 #guardar no debe funcionar sin tener esto seleccionado
 #
 #Aniadir para poner medidas
+#
+
+#exiftool -keywords=Bodegon pruebatag.png
