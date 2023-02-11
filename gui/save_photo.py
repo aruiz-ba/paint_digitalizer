@@ -37,7 +37,8 @@ def photo_gui(coord):
 
     paisaje = tk.Button(root, padx = 60, pady = 30, text = "Paisaje", bg = "White", command = lambda: set_tag("Paisaje"))
     retrato = tk.Button(root, padx = 60, pady = 30, text = "Retrato", bg = "White", command = lambda: set_tag("Retrato"))
-    arquitectura = tk.Button(root, padx = 60, pady = 30, text = "Arquitectura", bg = "White", command = lambda: set_tag("Arquitectura"))
+    libros = tk.Button(root, padx = 60, pady = 30, text = "Libros", bg = "White", command = lambda: set_tag("Libros"))
+    bodegon = tk.Button(root, padx = 60, pady = 30, text = "Bodegones", bg = "White", command = lambda: set_tag("Bodegones"))
 
     change = tk.Button(root, padx = 60, pady = 30, text = "CAMBIAR ESTANTE", bg = "Red", command = back_menu)
     confirm = tk.Button(root, padx = 60, pady = 30, text = "CONFIRMAR FOTO", bg = "Green", command = lambda coord=coord: save_photo(coord))
@@ -48,7 +49,8 @@ def photo_gui(coord):
 
     paisaje.pack()
     retrato.pack()
-    arquitectura.pack()
+    libros.pack()
+    bodegon.pack()
 
     confirm.pack()
     change.pack()
