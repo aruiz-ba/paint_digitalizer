@@ -6,15 +6,15 @@ fi
 
 #hacer un creador de carpetas
 
-COORD=$(python ./gui/menu_coord.py)
+COORD=$(python3 ./gui/menu_coord.py)
 #sxiv ./latest.jpg &
-python ./gui/save_photo.py $COORD 
+python3 ./gui/save_photo.py $COORD 
 
-pkill sxiv
 
 ./paint_digitalizer.sh
 
 pkill ktether
+pkill sxiv
 
 
 #This to exit the application

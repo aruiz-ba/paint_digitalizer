@@ -2,34 +2,35 @@ import  tkinter as tk
 import  os, shutil, sys
 
 abc = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
-index = 0
+index = 1
 
 root = tk.Tk()
 
 tag = tk.StringVar()
 id_num = tk.StringVar()
+tag_name = tk.StringVar()
 
 tag.set('Tematica:')
 id_num.set('Numero: 1')
 
-def set_tag(tag_name):
-    tag.set("Tematica: " + tag_name)
+def set_tag(name):
+    tag.set("Tematica: " + name)
+    tag_name.set(name)
 
 def save_photo(coord):
 
     #if file didnt got updated
     global index
-    index += 1
     id_num.set("Numero: " + str(index))
     shutil.copy("./latest.jpg", "./db/" + coord + "/" + coord + "_cuadro_" + str(index) + ".jpg")
-    os.system('exiftool -keywords=' + tag_name + "./db/" + coord + "/" + coord + "_cuadro_" + str(index) + ".jpg")
+    os.system('exiftool -keywords=' + tag_name.get() + " -overwrite_original ./db/" + coord + "/" + coord + "_cuadro_" + str(index) + ".jpg")
+    index += 1
 
 def back_menu():
     exit()
 
 
 def photo_gui(coord):
-    index= 1
 
     coordenada = tk.Label(root, font=('Arial', 30),text = "Coordenada:" + coord)
     id_number = tk.Label(root, font=('Arial', 30), textvariable = id_num)
