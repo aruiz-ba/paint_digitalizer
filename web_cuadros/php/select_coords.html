@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Tabla de botones</title>
+	<script>
+		var urlParams = new URLSearchParams(window.location.search);
+		var estanteValue = urlParams.get('estante');
+		function abrirPagina(columna, fila) {
+			//window.open("./form.php?columna=" + columna + "&fila=" + fila + "&estante=" + estanteValue);
+			const url = "./select_theme.html?columna=" + columna + "&fila=" + fila + "&estante=" + estanteValue;
+			window.location = url;
+		}
+	</script>
+	<style>
+	    table {
+	        border-collapse: collapse;
+	    }
+	    td {
+	        border: 1px solid black;
+	        padding: 10px;
+	        text-align: center;
+	    }
+	    button {
+	        font-size: 1.5em;
+	        padding: 10px 20px;
+	        max-width: 100%;
+	        box-sizing: border-box;
+	    }
+	</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<td><button onclick="abrirPagina('A', '1')">A1</button></td>
+			<td><button onclick="abrirPagina('A', '2')">A2</button></td>
+			<td><button onclick="abrirPagina('A', '3')">A3</button></td>
+			<td><button onclick="abrirPagina('A', '4')">A4</button></td>
+			<td><button onclick="abrirPagina('A', '5')">A5</button></td>
+			<td><button onclick="abrirPagina('A', '6')">A6</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="abrirPagina('B', '1')">B1</button></td>
+			<td><button onclick="abrirPagina('B', '2')">B2</button></td>
+			<td><button onclick="abrirPagina('B', '3')">B3</button></td>
+			<td><button onclick="abrirPagina('B', '4')">B4</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="abrirPagina('C', '1')">C1</button></td>
+			<td><button onclick="abrirPagina('C', '2')">C2</button></td>
+			<td><button onclick="abrirPagina('C', '3')">C3</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="abrirPagina('D', '1')">D1</button></td>
+			<td><button onclick="abrirPagina('D', '2')">D2</button></td>
+			<td><button onclick="abrirPagina('D', '3')">D3</button></td>
+			<td><button onclick="abrirPagina('D', '4')">D4</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="abrirPagina('E', '1')">E1</button></td>
+			<td><button onclick="abrirPagina('E', '2')">E2</button></td>
+			<td><button onclick="abrirPagina('E', '3')">E3</button></td>
+			<td><button onclick="abrirPagina('E', '4')">E4</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="abrirPagina('F', '1')">F1</button></td>
+			<td><button onclick="abrirPagina('F', '2')">F2</button></td>
+			<td><button onclick="abrirPagina('F', '3')">F3</button></td>
+			<td><button onclick="abrirPagina('F', '4')">F4</button></td>
+			<td><button onclick="abrirPagina('F', '5')">F5</button></td>
+			<td><button onclick="abrirPagina('F', '6')">F6</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="abrirPagina('G', '1')">G1</button></td>
+			<td><button onclick="abrirPagina('G', '2')">G2</button></td>
+			<td><button onclick="abrirPagina('G', '3')">G3</button></td>
+			<td><button onclick="abrirPagina('G', '4')">G4</button></td>
+			<td><button onclick="abrirPagina('G', '5')">G5</button></td>
+			<td><button onclick="abrirPagina('G', '6')">G6</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="abrirPagina('H', '1')">H1</button></td>
+			<td><button onclick="abrirPagina('H', '2')">H2</button></td>
+			<td><button onclick="abrirPagina('H', '3')">H3</button></td>
+			<td><button onclick="abrirPagina('H', '4')">H4</button></td>
+			<td><button onclick="abrirPagina('H', '5')">H5</button></td>
+			<td><button onclick="abrirPagina('H', '6')">H6</button></td>
+		</tr>
+	</table>
+</body>
+</html>

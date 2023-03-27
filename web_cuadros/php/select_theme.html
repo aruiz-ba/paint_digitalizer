@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Button Example</title>
+	<style>
+		/* Styling for buttons */
+		.button {
+			background-color: white;
+			border: 2px solid #ccc;
+			border-radius: 5px;
+			cursor: pointer;
+			padding: 10px;
+			margin: 5px;
+			transition: all 0.3s ease;
+		}
+		
+		/* Styling for selected buttons */
+		.button.selected {
+			background-color: #f84040;
+		}
+		
+		/* Styling for button images */
+		.button img {
+			height: 300px;
+			width: 300px;
+		}
+		
+		/* Styling for submit button */
+		.submit-button {
+			background-color: #4CAF50;
+			border: none;
+			color: white;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 5px;
+			cursor: pointer;
+			border-radius: 5px;
+		}
+	</style>
+	<script>
+		// Get data from url
+
+		var urlParams = new URLSearchParams(window.location.search);
+		var estanteValue = urlParams.get('estante');
+		var columnaValue = urlParams.get('columna');
+		var filaValue = urlParams.get('fila');
+
+		// Function to toggle selected class for buttons
+		function toggleSelected(button) {
+			button.classList.toggle("selected");
+		}
+		
+		// Function to get the selected button data and redirect to a new page with the data in the URL
+		function submit() {
+			// Get all the selected buttons
+			const selectedButtons = document.querySelectorAll(".button.selected");
+			
+			// Create an array to store the selected button data
+			const selectedButtonData = [];
+			
+			// Loop through the selected buttons and push their data into the array
+			selectedButtons.forEach((button) => {
+			  selectedButtonData.push(button.textContent.trim());
+			});
+			
+			// Create the URL with the selected button data as a query parameter
+			const url = "./form.php?columna=" + columnaValue + "&fila=" + filaValue + "&estante=" + estanteValue + "&temas=" + selectedButtonData.join(",");
+			
+			// Redirect to the URL
+			window.location.href = url;
+		}
+
+
+	</script>
+</head>
+<body>
+	<!-- Buttons with images and text -->
+	<button class="button" onclick="toggleSelected(this)">
+		<img src="./images/retrato.jpg">
+		<br>Retrato</br>
+	</button>
+	
+	<button class="button" onclick="toggleSelected(this)">
+		<img src="./images/arquitectura.jpg">
+		<br>Paisaje_Arquitectura</br>
+	</button>
+	
+	<button class="button" onclick="toggleSelected(this)">
+		<img src="./images/Paisaje_natural.jpg">
+		<br>Paisaje_Natural</br>
+	</button>
+	
+	<button class="button" onclick="toggleSelected(this)">
+		<img src="./images/Bodegon.jpg">
+		<br>Bodegón</br>
+	</button>
+	
+	<button class="button" onclick="toggleSelected(this)">
+		<img src="./images/desnudo.png">
+		<br>Desnudo</br>
+	</button>
+	
+	<button class="button" onclick="toggleSelected(this)">
+		<img src="./images/dibujo.png">
+		<br>Dibujo</br>
+	</button>
+	<button class="button" onclick="toggleSelected(this)">
+		<img src="./images/acuarela.png">
+		<br>Acuarela</br>
+	</button>
+
+	<button class="submit-button" onclick="submit()">Submit</button>
+</body>
+</html>
