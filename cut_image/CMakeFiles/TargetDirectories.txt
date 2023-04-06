@@ -1,3 +1,0 @@
-/home/adri/projects/manuel/foto_cuadros/paint_digitalizer/cut_image/CMakeFiles/paint_cutter.dir
-/home/adri/projects/manuel/foto_cuadros/paint_digitalizer/cut_image/CMakeFiles/edit_cache.dir
-/home/adri/projects/manuel/foto_cuadros/paint_digitalizer/cut_image/CMakeFiles/rebuild_cache.dir

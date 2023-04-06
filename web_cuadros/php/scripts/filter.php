@@ -16,7 +16,10 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-        echo '<img src="../uploads/' . $row["filename"] . '"><br>';
+		echo '<h1> Estante: ' . $row["Estante"] . '</h1>';
+		echo '<h1> Fila: ' . $row["Columna"] . $row["Fila"] . '</h1>';
+		echo '<h1> Carpeta: 2 </h1>';
+        echo '<img src="../uploads/' . $row["filename"] . '" width="80%"><br>';
     }
 } else {
     echo "0 results";

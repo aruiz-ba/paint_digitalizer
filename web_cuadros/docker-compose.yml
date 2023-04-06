@@ -9,6 +9,8 @@ services:
     volumes:
       - image-data:/var/www/html/uploads
       - /dev/bus/usb:/dev/bus/usb  # Agrega esta línea para acceder al bus USB desde el contenedor
+    devices:
+      - /dev/bus/usb:/dev/bus/usb
     depends_on:
       - db
   db:

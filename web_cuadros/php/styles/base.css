@@ -13,3 +13,56 @@
   background-color: #3e8e41;
 }
 
+/* Style for body */
+body {
+  background-color: #1a1a1a;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  text-align: center; /* Center text horizontally */
+  margin: 0;
+  padding: 0;
+}
+
+img {
+	width: 60%;
+
+}
+
+/* Style for label */
+label {
+  font-size: 18px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Center and increase size of input */
+input {
+  font-size: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  outline: none;
+  text-align: center; /* Center text horizontally */
+  display: block; /* Make the input element a block element */
+  margin: 0 auto; /* Center the block element horizontally */
+  background-color: #f2f2f2;
+}
+
+/* Center and increase size of button */
+button {
+  font-size: 20px;
+  padding: 15px 30px;
+  background-color: #0077cc;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  display: block; /* Make the button element a block element */
+  margin: 0 auto; /* Center the block element horizontally */
+}
+
+/* Hover style for button */
+button:hover {
+  background-color: #005599;
+}
+
