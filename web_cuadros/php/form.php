@@ -15,11 +15,13 @@
 	<main>
 		<?php
 			//Get from url
+			$filename_url = $_GET['file'];
 			$columna_url = $_GET['columna'];
 			$fila_url = $_GET['fila'];
 			$estante_url = $_GET['estante'];
 			$temas = explode(",", $_GET["temas"]);
 
+			$file = $filename_url;
 			$Columna = $columna_url;
 			$Fila = $fila_url;
 			$Estante = $estante_url;
@@ -29,12 +31,12 @@
 			if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				// Retrieve form data
 				$label = $_POST["label"];
-				$file = $_FILES["file"]["name"];
+				//$file = $_FILES["file"]["name"];
 
 				// Save file to server
-				$target_dir = "uploads/";
-				$target_file = $target_dir . basename($_FILES["file"]["name"]);
-				move_uploaded_file($_FILES["file"]["tmp_name"], $target_file);
+				//$target_dir = "uploads/";
+				//$target_file = $target_dir . basename($_FILES["file"]["name"]);
+				//move_uploaded_file($_FILES["file"]["tmp_name"], $target_file);
 
 				// Save data to database
 				$servername = "db";
@@ -74,9 +76,6 @@
 		<form method="post" enctype="multipart/form-data">
 			<label for="label">Código de barras:</label>
 			<input type="text" id="barcode" name="label" required><br><br>
-
-			<label for="file">File:</label>
-			<input type="file" id="file" name="file" required><br><br>
 
 			<input type="submit" value="Confirmar Cuadro">
 		</form>

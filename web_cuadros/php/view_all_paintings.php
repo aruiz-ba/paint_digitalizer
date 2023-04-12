@@ -15,10 +15,10 @@
 </head>
 <body>
 	<header>
-		<h1>Welcome to my PHP website!</h1>
+		<h1>Mostrar todos los Cuadros</h1>
 	</header>
 	<main>
-		<h2>Images</h2>
+		<h2>Imágenes</h2>
 		<div>
 			<?php
 				// Retrieve images from database
@@ -30,7 +30,7 @@
 				if ($conn->connect_error) {
 					die("Connection failed: " . $conn->connect_error);
 				}
-				$sql = "SELECT * FROM files";
+				$sql = "SELECT * FROM Objects";
 				$result = $conn->query($sql);
 				if ($result->num_rows > 0) {
 					// Output images as a grid
@@ -40,14 +40,13 @@
 					}
 					echo "</div>";
 				} else {
-					echo "<p>No images found.</p>";
+					echo "<p>No se encontraron cuadros.</p>";
 				}
 				$conn->close();
 			?>
 		</div>
 	</main>
 	<footer>
-		<p>&copy; 2023 My PHP Website. All rights reserved.</p>
 	</footer>
 </body>
 </html>

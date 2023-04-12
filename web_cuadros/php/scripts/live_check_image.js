@@ -24,10 +24,41 @@ function checkForImageChanges() {
 
 // Check for changes in the image file at the specified interval
 setInterval(checkForImageChanges, checkInterval);
+
+//
+//const saveButton = document.querySelector('#save-button');
+//saveButton.addEventListener('click', () => {
+//  fetch('./scripts/save_image.php')
+//    .then(response => response.text())
+//    .then(fileName => {
+//      window.location.href = '../form.php?file=' + fileName;
+//    })
+//	.catch(error => {
+//      console.error('Error saving file:', error);
+//      throw error;
+//    });
+//    //.catch(error => console.error(error));
+//});
+
 const saveButton = document.querySelector('#save-button');
+
 saveButton.addEventListener('click', () => {
+  // Extract variables from URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const columna = urlParams.get('columna');
+  const fila = urlParams.get('fila');
+  const estante = urlParams.get('estante');
+  const temas = urlParams.get('temas');
+
+  // Make fetch request and generate new URL with extracted variables
   fetch('./scripts/save_image.php')
     .then(response => response.text())
-    .then(text => console.log(text))
-    .catch(error => console.error(error));
+    .then(fileName => {
+      const newUrl = `../form.php?file=${fileName}&columna=${columna}&fila=${fila}&estante=${estante}&temas=${temas}`;
+      window.location.href = newUrl;
+    })
+    .catch(error => {
+      console.error('Error saving file:', error);
+      throw error;
+    });
 });

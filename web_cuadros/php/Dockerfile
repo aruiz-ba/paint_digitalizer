@@ -27,6 +27,9 @@ RUN make install
 #ADD ./test_green_file.jpeg /home/
 
 # Installation of all the web stuff
+COPY config_files/latest.jpg.cachecontrol.conf /etc/apache2/conf-available/
+#RUN a2enconf latest.jpg.cachecontrol
+
 COPY . /var/www/html/
 
 RUN mkdir /var/www/html/uploads && \

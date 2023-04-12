@@ -3,28 +3,17 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Seleccione estante</title>
+    <link href="styles/base.css" rel="stylesheet">
 	<script>
 		function abrirPagina(estante) {
 			const url = "./select_coords.html?estante=" + estante;
 			window.location = url;
 		}
 	</script>
-	<style>
-            button {
-                font-size: 1.5em;
-                padding: 10px 20px;
-                max-width: 100%;
-                box-sizing: border-box;
-            }
-    </style>
 </head>
 <body>
-	<table>
-		<tr>
 			<!--Tocara separar ambos para tener mapa de coordenadas diferentes -->
-			<td><button onclick="abrirPagina('A')">Estante A</button></td>
-			<td><button onclick="abrirPagina('B')">Estante B</button></td>
-		</tr>
-	</table>
+	<button onclick="abrirPagina('A')" class="button-link">Estante A</button>
+	<button onclick="abrirPagina('B')" class="button-link">Estante B</button>
 </body>
 </html>

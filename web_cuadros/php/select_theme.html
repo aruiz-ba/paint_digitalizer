@@ -68,7 +68,7 @@
 			});
 			
 			// Create the URL with the selected button data as a query parameter
-			const url = "./form.php?columna=" + columnaValue + "&fila=" + filaValue + "&estante=" + estanteValue + "&temas=" + selectedButtonData.join(",");
+			const url = "./select_image.html?columna=" + columnaValue + "&fila=" + filaValue + "&estante=" + estanteValue + "&temas=" + selectedButtonData.join(",");
 			
 			// Redirect to the URL
 			window.location.href = url;
@@ -81,38 +81,38 @@
 	<!-- Buttons with images and text -->
 	<button class="button" onclick="toggleSelected(this)">
 		<img src="./images/retrato.jpg">
-		<br>Retrato</br>
+		<h1>Retrato</h1>
 	</button>
 	
 	<button class="button" onclick="toggleSelected(this)">
 		<img src="./images/arquitectura.jpg">
-		<br>Paisaje_Arquitectura</br>
+		<h1>Paisaje_Arquitectura</h1>
 	</button>
 	
 	<button class="button" onclick="toggleSelected(this)">
 		<img src="./images/Paisaje_natural.jpg">
-		<br>Paisaje_Natural</br>
+		<h1>Paisaje_Natural</h1>
 	</button>
 	
 	<button class="button" onclick="toggleSelected(this)">
 		<img src="./images/Bodegon.jpg">
-		<br>Bodegón</br>
+		<h1>Bodegón</h1>
 	</button>
 	
 	<button class="button" onclick="toggleSelected(this)">
 		<img src="./images/desnudo.png">
-		<br>Desnudo</br>
+		<h1>Desnudo</h1>
 	</button>
 	
 	<button class="button" onclick="toggleSelected(this)">
-		<img src="./images/dibujo.png">
-		<br>Dibujo</br>
+		<img src="./images/dibujo.jpg">
+		<h1>Dibujo</h1>
 	</button>
 	<button class="button" onclick="toggleSelected(this)">
-		<img src="./images/acuarela.png">
-		<br>Acuarela</br>
+		<img src="./images/acuarelas.jpg">
+		<h1>Acuarela</h1>
 	</button>
 
-	<button class="submit-button" onclick="submit()">Submit</button>
+	<button class="submit-button" onclick="submit()">Continuar</button>
 </body>
 </html>
