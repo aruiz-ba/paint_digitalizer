@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Seleccione estante</title>
+    <link href="styles/base.css" rel="stylesheet">
+	<script>
+		function abrirPagina(carpeta) {
+			var urlParams = new URLSearchParams(window.location.search);
+			var columna = urlParams.get('columna');
+  			var fila = urlParams.get('fila');
+			var estanteValue = urlParams.get('estante');
+
+			const url = "./select_theme.html?columna=" + columna + "&fila=" + fila + "&estante=" + estanteValue + "&carpeta=" + carpeta;
+			window.location = url;
+		}
+	</script>
+</head>
+<body>
+	<h1>Seleccione la carpeta</h1>
+			<!--Tocara separar ambos para tener mapa de coordenadas diferentes -->
+	<button onclick="abrirPagina('')" class="button-link" style="background-color: red;">Sin carpeta</button>
+	<button onclick="abrirPagina('1')" class="button-link">Carpeta 1</button>
+	<button onclick="abrirPagina('2')" class="button-link">Carpeta 2</button>
+	<button onclick="abrirPagina('3')" class="button-link">Carpeta 3</button>
+	<button onclick="abrirPagina('4')" class="button-link">Carpeta 4</button>
+	<button onclick="abrirPagina('5')" class="button-link">Carpeta 5</button>
+</body>
+</html>

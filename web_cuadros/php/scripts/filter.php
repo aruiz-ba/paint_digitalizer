@@ -1,3 +1,7 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="../styles/base.css">
+</head>
+
 <?php
 $servername = "db";
 $username = "myuser";
@@ -18,7 +22,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
 		echo '<h1> Estante: ' . $row["Estante"] . '</h1>';
 		echo '<h1> Fila: ' . $row["Columna"] . $row["Fila"] . '</h1>';
-		echo '<h1> Carpeta: 2 </h1>';
+		echo '<h1> Carpeta:' . $row["Carpeta"] . '</h1>';
         echo '<img src="../uploads/' . $row["filename"] . '" width="80%"><br>';
     }
 } else {

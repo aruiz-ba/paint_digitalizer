@@ -19,13 +19,15 @@
 			$columna_url = $_GET['columna'];
 			$fila_url = $_GET['fila'];
 			$estante_url = $_GET['estante'];
+			$carpeta_url = $_GET['carpeta'];
 			$temas = explode(",", $_GET["temas"]);
 
 			$file = $filename_url;
 			$Columna = $columna_url;
 			$Fila = $fila_url;
 			$Estante = $estante_url;
-			echo "<h1> Estante: $Estante Coordenada: $Columna$Fila</h1>";
+			$Carpeta = $carpeta_url;
+			echo "<h1> Estante: $Estante Coordenada: $Columna$Fila Carpeta: $Carpeta</h1>";
 
 			// Handle form submission
 			if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -47,7 +49,7 @@
 				if ($conn->connect_error) {
 					die("Connection failed: " . $conn->connect_error);
 				}
-				$sql = "INSERT INTO Objects (label, filename, Columna, Fila, Estante) VALUES ('$label', '$file', '$Columna', '$Fila', '$Estante')";
+				$sql = "INSERT INTO Objects (label, filename, Columna, Fila, Estante, Carpeta) VALUES ('$label', '$file', '$Columna', '$Fila', '$Estante', '$Carpeta')";
 				if ($conn->query($sql) === TRUE) {
 					$object_id = $conn->insert_id; // get the id of the inserted object
 
@@ -61,9 +63,9 @@
 
 					echo "<p>El cuadro se ha subido correctamente.</p>";
 					echo "<p>¿Quieres seguir subiendo cuadros?</p>";
-            		echo "<a class='button' href='select_theme.html?columna=$Columna&fila=$Fila&estante=$Estante'>Hacer otro cuadro</a>";
-            		echo "<a class='button' href='./select_coords.html?estante=$Estante'>Cambiar de coordenadas</a>";
-            		echo "<a class='button' href='./index.html'>Volver al principio</a>";
+            		echo "<a class='button-link' href='select_theme.html?columna=$Columna&fila=$Fila&estante=$Estante&carpeta=$Carpeta'>Hacer otro cuadro</a>";
+            		echo "<a class='button-link' href='./select_coords.html?estante=$Estante'>Cambiar de coordenadas</a>";
+            		echo "<a class='button-link' href='./index.html'>Volver al principio</a>";
 					exit();
 				} else {
 					echo "Error: " . $sql . "<br>" . $conn->error;

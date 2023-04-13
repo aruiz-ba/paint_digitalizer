@@ -48,13 +48,14 @@ saveButton.addEventListener('click', () => {
   const columna = urlParams.get('columna');
   const fila = urlParams.get('fila');
   const estante = urlParams.get('estante');
+  const carpeta = urlParams.get('carpeta');
   const temas = urlParams.get('temas');
 
   // Make fetch request and generate new URL with extracted variables
   fetch('./scripts/save_image.php')
     .then(response => response.text())
     .then(fileName => {
-      const newUrl = `../form.php?file=${fileName}&columna=${columna}&fila=${fila}&estante=${estante}&temas=${temas}`;
+      const newUrl = `../form.php?file=${fileName}&columna=${columna}&fila=${fila}&estante=${estante}&carpeta=${carpeta}&temas=${temas}`;
       window.location.href = newUrl;
     })
     .catch(error => {

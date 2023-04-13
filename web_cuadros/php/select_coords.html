@@ -3,12 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Tabla de botones</title>
+    <link href="styles/base.css" rel="stylesheet">
 	<script>
 		var urlParams = new URLSearchParams(window.location.search);
 		var estanteValue = urlParams.get('estante');
 		function abrirPagina(columna, fila) {
 			//window.open("./form.php?columna=" + columna + "&fila=" + fila + "&estante=" + estanteValue);
-			const url = "./select_theme.html?columna=" + columna + "&fila=" + fila + "&estante=" + estanteValue;
+			const url = "./select_carpeta.html?columna=" + columna + "&fila=" + fila + "&estante=" + estanteValue;
 			window.location = url;
 		}
 	</script>
@@ -30,41 +31,61 @@
 	</style>
 </head>
 <body>
+  <h1>Seleccione una coordenada</h1>
   <table id="table"></table>
 
   <script>
     // define the data in the format of an array of arrays
-    const data = [
-      ["A1", "A2", "A3", "A4", "A1", "F1", "G1", "H1"],
-      ["A2", "B2", "C2", "D2", "E2", "F2", "G2", "H2"],
-      ["A3", "B3", "C3", "D3", "E3", "F3", "G3", "H3"],
-      ["A4", "B4", "C4", "D4", "E4", "F4", "G4", "H4"],
-      ["A5", "B5", "C5", "D5", "E5", "F5", "G5", "H5"],
-      ["A6", "B6", "C6", "D6", "E6", "F6", "G6", "H6"]
+	let data;
+    const dataA = [
+		['A1', 'A2', 'A3', 'A4', 'A5', 'A6'],
+		['B1', 'B2', 'B3', 'B4', '', ''],
+		['C1', 'C2', 'C3', '', '', ''],
+		['D1', 'D2', 'D3', 'D4', '', ''],
+		['E1', 'E2', 'E3', 'E4', '', ''],
+		['F1', 'F2', 'F3', 'F4', 'F5', 'F6'],
+		['G1', 'G2', 'G3', 'G4', 'G5', 'G6'],
+		['H1', 'H2', 'H3', 'H4', 'H5', 'H6']
     ];
+
+    const dataB = [
+		['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'A9', 'A10', 'A11', 'A12', 'A13', 'A14', 'A15'],
+    ];
+	
+	// check what coords to use from the Estante Value
+	if (estanteValue === "A") {
+		data = dataA;
+	}
+	else if (estanteValue === "B") {
+		data = dataB;
+	}
 
     // get the table element
     const table = document.getElementById("table");
 
     // loop through the data and create rows and cells for each item
-    for (let i = 0; i < data[0].length; i++) {
-      // create a new row
-      const row = document.createElement("tr");
+	for (let i = 0; i < data[0].length; i++) {
+	  // create a new row
+	  const row = document.createElement("tr");
+	
+	  // loop through each column in the row and create a new cell
+	  for (let j = 0; j < data.length; j++) {
+	    const cell = document.createElement("td");
+	    const text = data[j][i];
+	    if (text !== "") {
+	      const button = document.createElement("button");
+	      const buttonText = document.createTextNode(text);
+	      button.appendChild(buttonText);
+	      button.setAttribute("onclick", `abrirPagina('${text.charAt(0)}', '${text.charAt(1)}')`);
+	      cell.appendChild(button);
+	    }
+	    row.appendChild(cell);
+	  }
+	
+	  // add the row to the table
+	  table.appendChild(row);
+	}
 
-      // loop through each column in the row and create a new cell
-      for (let j = 0; j < data.length; j++) {
-        const cell = document.createElement("td");
-        const button = document.createElement("button");
-        const buttonText = document.createTextNode(data[j][i]);
-        button.appendChild(buttonText);
-        button.setAttribute("onclick", `abrirPagina('${data[j][i].charAt(0)}', '${data[j][i].charAt(1)}')`);
-        cell.appendChild(button);
-        row.appendChild(cell);
-      }
-
-      // add the row to the table
-      table.appendChild(row);
-    }
   </script>
 </body>
 </html>
