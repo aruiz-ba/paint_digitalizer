@@ -81,6 +81,7 @@
 
 			<input type="submit" value="Confirmar Cuadro">
 		</form>
+    	<img src="./cut_image/latest.jpg" alt="Live Image">
 
 <!--		<form method="post" action="delete.php">
 		   <input type="submit" name="delete" value="Borrar base de datos">
