@@ -1,14 +1,10 @@
-#Requerimientos
--Tk pip install tk
--Open cv
--gphoto2
--sxiv
+# Rembrandt and Manuel: an artistic fusion with Stable Diffusion
 
-#Remove geeqie from tkinter
+By applying Stable Diffusion and Dreambooth to the digitized work, impressive results can be obtained that reinvent a Rembrandt portrait through the style of only landscape works by the artist Manuel Ruiz Ortega. This allows Stable Diffusion to be taught to paint like Manuel, but only understanding Manuel’s world through his landscape painting, completely ignoring his portraits and paintings with human or animal figures. This creates magnificent results where AI fuses natural landscapes from Manuel’s childhood with the clothing of the portrait and completes the face’s unknown with a midpoint between Rembrandt’s portraits and Manuel’s style, achieving an exquisite fusion of both styles.
 
-
-
-#To do
-- Fix the camera hook not starting when docker starts.
-- Fix cut_image not working well with big files, check if you can fix this by adding more power to docker
-- Make the save image button move to the form page with the file name that got copied, and make it save with different name each time. 
+![comparacion](https://github.com/aruiz-ba/paint_digitalizer/assets/46310231/4e185063-9343-4e13-92d9-42f8a16ac615)
+*On the right the original paintings of Manuel, on the left the AI result*
+![comparacion2](https://github.com/aruiz-ba/paint_digitalizer/assets/46310231/45e6aebf-a819-4698-b09c-b085cfb8dcfb)
+*On the right the original painting of Manuel, on the left the AI result*
+![comparacion5](https://github.com/aruiz-ba/paint_digitalizer/assets/46310231/6ade524c-13b7-4a61-9831-ca18ed3aed18)
+*On the right the original painting of Manuel, on the left the AI result*
